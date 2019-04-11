@@ -53,4 +53,4 @@ callCountry("canada", "name", function(response) {
         - clear button to clear database
 
 
-* /
+*/

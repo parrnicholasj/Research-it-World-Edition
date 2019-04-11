@@ -1,3 +1,18 @@
+
+// search for flag
+callCountry("canada", "flag", function(response) {
+  console.log(response);
+
+  // use response object to write to page or do whatever with
+});
+
+// response
+callCountry("canada", "name", function(response) {
+  console.log(response);
+});
+
+// callCountry("countryName", "infoName", callback);
+
 /* 
   - We want to be able to write into input fields and press the submit button to input
   - those input fields get used for API calls, to pull up search results. 

@@ -31,25 +31,30 @@
                 <label for="Country Name">Name of Country</label>
                 <input type="text" class="form-control" id="country-input" placeholder="">
               </div>
-          <a href="#" class="btn btn-primary">Go!</a>
+          <button id="search" class="btn btn-primary">Let's Go!</button>
         </div>
       </div>
     </div>
-    <div class="col-10 col-md-7 text-center">
+    <div class="col-12 col-md-6 text-center">
       <div class="card">
       <div class="card-body">
-        This is where the info will go once we determine which pieces we want in a bunch of span tags
+        <span id = "country-name" class="text-center font-weight-bold">Country here</span><br>
+        <b>Capital:</b><span id="capital"></span><br>
+        <b>Common Language:</b><span id="language"></span><br>
+        <b>Currency:</b><span id="currency"></span>
+        <b></b>
       </div>
     </div>
   </div>
-    <div class="col-2">
-        <img src="https://www.countryflags.io/be/flat/64.png">
-        (This was the example used by the flag API)
+    <div class="col-3">
+        <div id="flag"></div>
+        <div id="map"></div>
     </div>
   </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="assets/scripts/javascript.js"></script>
 </body>
 </html>

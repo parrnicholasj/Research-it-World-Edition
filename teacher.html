@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link rel="stylesheet" href="assets/styles/style.css">
+<title>Title</title>
+</head>
+<body>
+<!-- navbar will go here -->
+
+<!-- whole page container -->
+<div class="container">
+  <div class="row">
+    <!-- left column start-->
+    <aside class="col-12 col-md-4">
+      <!-- start form -->
+      <form>
+          <!-- #student-name-add input field -->
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <!-- #student-name-submit -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- end form -->
+    </aside>
+    <!-- left column end -->
+
+    <!-- main page -->
+    <main class="col-12 col-md-8">
+      <!-- #student-table-teacher student area start-->
+      <table id="student-table-teacher"class="table">
+        <thead class="thead-dark">
+          <!-- table heading row -->
+          <tr>
+            <th scope="col">Student/Group Name</th>
+            <th scope="col">Number of Searches Made</th>
+            <th scope="col">Number of Times Saved Clicked</th>
+          </tr>
+        </thead>
+        <!-- start table body -->
+        <tbody>
+          <!-- tbody to be added using JS -->
+        </tbody>
+      </table>
+      <!-- table end -->
+
+    </main>
+    <!-- main page end -->
+    
+  </div>
+   
+</div>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+<script src="assets/scripts/javascript.js"></script>
+</body>
+</html>

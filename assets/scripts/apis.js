@@ -29,7 +29,7 @@ var promiseHandler = promise => promise
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //weather API
-async function callWeather(capital, wantTemp, cb) {//limit of 60 calls per minute
+async function callWeather(capital, cb) {//limit of 60 calls per minute
 
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?APPID=eda8189bddef02d8773e2c5e86f8ba9f&q=" + capital//query url update as needed
 
@@ -39,18 +39,20 @@ async function callWeather(capital, wantTemp, cb) {//limit of 60 calls per minut
     console.log(err);
     return false;
   }
-if (wantTemp){
-  cb(response.main.temp);
-}
 
-if (!wantTemp){
-  cd(response.weather[0].main)
-}
+  var responseObj = {
+    temp: response.main.temp,
+    weather: response.weather[0].main,
+    weatherDescr: response.weather[0].description
+  }
+
+  cb(responseObj);
+
   console.log(response);
   
 }
 
-// callWeather("washington", true, function(response) {//provide name of city and use true for temp or false for weather
+// callWeather("washington", function(response) {//provide name of city
 //   console.log("weather");
-//   console.log(response);
+//   console.log(response.weatherDescr);//use .temp for temp || .weather for weather || .weatherDescr for weather description
 // })

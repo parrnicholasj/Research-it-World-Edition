@@ -102,8 +102,8 @@ var objectArray = [];
 
 }
 
-callWeather("France", function (response)//provide name of city
-{
-  console.log("about france");
-  console.log(response[0]);//loop through array printing out .author .title .snippet and .url
-})
+// callWeather("France", function (response)//provide name of city
+// {
+//   console.log("about france");
+//   console.log(response[0]);//loop through array printing out .author .title .snippet and .url
+// })

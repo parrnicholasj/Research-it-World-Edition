@@ -41,37 +41,37 @@
               </div>
             </div>
             <h5>NEW STUDENTS:</h5>
-            <form>
+            <form class="needs-validation">
               <div class="form-group">
                 <label for="studentName">Student's name</label>
-                <input type="input" class="form-control" id="name-input" placeholder="">
+                <input type="input" class="form-control" id="name-input" placeholder="" required>
               </div>
             </form>
             <form>
               <div class="form-group">
                 <label for="Country Name">Name of Country</label>
-                <input type="input" class="form-control" id="country-input" placeholder="">
+                <input type="input" class="form-control" id="country-input" placeholder="" required>
               </div>
             </form>
             <button type="button" id="search" class="btn btn-primary" data-toggle="modal" data-target="#emptyInputs">Let's Go!</button>
-
             <!-- Modal -->
-            <div class="modal fade" id="emptyInputs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            <!-- <div class="modal fade" id="emptyInputs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Hey!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
                   </div>
                   <div class="modal-body">
                     You didn't fill in at least one of the boxes. Please fill in both boxes before continuing.
                   </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Okay
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -99,10 +99,12 @@
         </div>
 
         <div class="card">
+          <div class="card-header">National HOlidays</div>
+        </div>
+        
+        <div class="card">
           <div class="card-header">News</div>
           <div class="card-body" id="headlines">
-            A few headlines go here
-          </div>
         </div>
 
       </div>
@@ -117,6 +119,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="assets/scripts/javascript.js"></script>
   <script src="assets/scripts/searchOnClick.js"></script>
+  <script src="assets/scripts/apis.js"></script>
 </body>
 
 </html>

@@ -67,7 +67,7 @@ async function callWeather(capital, cb)
 //nytimes api
 
 async function callNYT(country, cb)
-{//limit of 60 calls per minute
+{//limit of 10 calls per minute
 
   var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=Gzw45bRn0Ys1abLdZrESLiVNwoI9Q6Oi&q=" + country//query url update as needed
 
@@ -106,4 +106,36 @@ var objectArray = [];
 // {
 //   console.log("about france");
 //   console.log(response[0]);//loop through array printing out .author .title .snippet and .url
+// })
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//holidays API
+async function callHolidays(countryCode, year, cb)
+{
+
+  var queryURL = "https://calendarific.com/api/v2/holidays?country=" + countryCode + "&year=" +  year + "&api_key=38e0522646d37ce3baa9eeb70ea3dec7cb21758c"//query url update as needed
+
+  var [err, response] = await promiseHandler($.getJSON(queryURL));
+
+  if (err)
+  {
+    console.log(err);
+    return false;
+  }
+
+ 
+
+  cb(response.response.holidays);
+
+  console.log(response.response.holidays);
+
+}
+
+// callHolidays("UK", 2019, function(response){//call by country code and year
+//   console.log("holdays");
+//   //response[i].date.iso for date
+//   //response[i].description
+//   //response[i].name
 // })

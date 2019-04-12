@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <title>Students | Countries App</title>
+</head>
+
+<body>
+  <!-- I switched the Jumbotron to a header because I feel it looks better -->
+  <div class="header">
+    <div class="container">
+      <h4 class="text-center">Countries of the World</h4>
+
+    </div>
+  </div>
+  <!-- This is where students get info on the countries -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <div class="card">
+          <div class="card-header text-center font-weight-bold">
+            STUDENT INPUT
+          </div>
+          <div class="card-body">
+            <h5>RETURNING STUDENTS:</h5>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Find your info here
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+            <h5>NEW STUDENTS:</h5>
+            <form>
+              <div class="form-group">
+                <label for="studentName">Student's name</label>
+                <input type="input" class="form-control" id="name-input" placeholder="">
+              </div>
+            </form>
+            <form>
+              <div class="form-group">
+                <label for="Country Name">Name of Country</label>
+                <input type="input" class="form-control" id="country-input" placeholder="">
+              </div>
+            </form>
+            <button id="search" class="btn btn-primary">Let's Go!</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 text-center">
+        <div class="card mb-3">
+          <div class="card-header font-weight-bold">Basic Info</div>
+          <div class="card-body">
+            <span id="country-name" class="text-center font-weight-bold">Country here</span><br>
+            <b>Capital:</b><span class="capital"></span><br>
+            <b>Common Language:</b><span id="language"></span><br>
+            <b>Currency:</b><span id="currency"></span><br>
+            <b>Other stuff</b>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header">Weather at <span class="capital"></span></div>
+          <div class="card-body">
+            <b>Temperature:</b><span id="temperature"></span><br>
+            <b>Relative Humidity:</b><span id="humidity"></span><br>
+            <b>Dew Point:</b><span id="dewPoint"></span><br>
+            <b>Wind:</b><span id="wind"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">News</div>
+          <div class="card-body">
+            A few headlines go here
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12 col-md-3">
+        <div id="flag"></div>
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="assets/scripts/javascript.js"></script>
+  <script src="assets/scripts/searchOnClick.js"></script>
+</body>
+
+</html>

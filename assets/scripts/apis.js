@@ -66,7 +66,7 @@ async function callWeather(capital, cb)
 
 //nytimes api
 
-async function callWeather(country, cb)
+async function callNYT(country, cb)
 {//limit of 60 calls per minute
 
   var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=Gzw45bRn0Ys1abLdZrESLiVNwoI9Q6Oi&q=" + country//query url update as needed
@@ -102,7 +102,7 @@ var objectArray = [];
 
 }
 
-// callWeather("France", function (response)//provide name of city
+// callNYT("France", function (response)//provide name of city
 // {
 //   console.log("about france");
 //   console.log(response[0]);//loop through array printing out .author .title .snippet and .url

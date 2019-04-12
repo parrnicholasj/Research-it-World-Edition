@@ -50,6 +50,7 @@ if (!wantTemp){
   
 }
 
-callWeather("washington", true, function(response) {//provide name of city and use true for temp or false for weather
-  console.log(response);
-})
+// callWeather("washington", true, function(response) {//provide name of city and use true for temp or false for weather
+//   console.log("weather");
+//   console.log(response);
+// })

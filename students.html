@@ -53,7 +53,25 @@
                 <input type="input" class="form-control" id="country-input" placeholder="">
               </div>
             </form>
-            <button id="search" class="btn btn-primary">Let's Go!</button>
+            <button type="button" id="search" class="btn btn-primary" data-toggle="modal" data-target="#emptyInputs">Let's Go!</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="emptyInputs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hey!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    You didn't fill in at least one of the boxes. Please fill in both boxes before continuing.
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -62,9 +80,9 @@
           <div class="card-header font-weight-bold">Basic Info</div>
           <div class="card-body">
             <span id="country-name" class="text-center font-weight-bold">Country here</span><br>
-            <b>Capital:</b><span class="capital"></span><br>
-            <b>Common Language:</b><span id="language"></span><br>
-            <b>Currency:</b><span id="currency"></span><br>
+            <b>Capital: </b><span class="capital"></span><br>
+            <b>Common Language: </b><span id="language"></span><br>
+            <b>Currency: </b><span id="currency"></span><br>
             <b>Other stuff</b>
           </div>
         </div>
@@ -72,16 +90,17 @@
         <div class="card mb-3">
           <div class="card-header">Weather at <span class="capital"></span></div>
           <div class="card-body">
-            <b>Temperature:</b><span id="temperature"></span><br>
-            <b>Relative Humidity:</b><span id="humidity"></span><br>
-            <b>Dew Point:</b><span id="dewPoint"></span><br>
-            <b>Wind:</b><span id="wind"></span>
+            <b>Status: </b><span id="cloud-status"></span><br>
+            <b>Temperature: </b><span id="temperature"></span><br>
+            <b>Relative Humidity: </b><span id="humidity"></span><br>
+            <b>Dew Point: </b><span id="dewPoint"></span><br>
+            <b>Wind: </b><span id="wind"></span>
           </div>
         </div>
 
         <div class="card">
           <div class="card-header">News</div>
-          <div class="card-body">
+          <div class="card-body" id="headlines">
             A few headlines go here
           </div>
         </div>

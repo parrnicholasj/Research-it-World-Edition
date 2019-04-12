@@ -133,9 +133,9 @@ async function callHolidays(countryCode, year, cb)
 
 }
 
-callHolidays("UK", 2019, function(response){//call by country code and year
-  console.log("holdays");
-  //response[i].date.iso for date
-  //response[i].description
-  //response[i].name
-})
+// callHolidays("UK", 2019, function(response){//call by country code and year
+//   console.log("holdays");
+//   //response[i].date.iso for date
+//   //response[i].description
+//   //response[i].name
+// })

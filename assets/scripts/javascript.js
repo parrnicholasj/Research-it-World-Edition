@@ -60,9 +60,12 @@ $(document).ready(function(){
     var database = firebase.database();
     var capital;
 
-    $("studentSearchForm").on("submit", function(event){
+    $("#studentSearchForm").on("submit", function(event){
 
       event.preventDefault();
+
+      
+    
 
       // getting the key from the selected item to a place where the information can be retrieved
       $(document).on("change", "#studentPicker", function(event) {
@@ -109,6 +112,12 @@ $(document).ready(function(){
 
       event.preventDefault();
       // creating variables for the text box and selector
+
+      $("#country-info-card").empty();
+      $("#news-card").empty();
+      $("#holiday-card").empty();
+      $("#weather-card").empty();
+
       var countryInput = $("#country-input").val().trim();
       var studentPicker = $("#studentPicker").val();
       var countryData = {};

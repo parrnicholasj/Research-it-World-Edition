@@ -59,9 +59,12 @@
         <div class="col-6 col-md-7">
           <!-- start #country-info-card-->
           <div class="card">
-            <div id="country-info-card"class="card-body">
+            <div class="card-body">
               <h5 class="card-title">Info about <span class="country-name"></span></h5>
+              <div id="country-info-card">
                 <!-- information to be printed here from the JS -->
+              </div>
+                
             </div>
           </div>
           <!-- end info card -->
@@ -71,12 +74,18 @@
         <!-- start map col -->
         <div class="col-6 col-md-5">
           <!-- start map card img id: #map-img-->
-          <div class="card">
-            <img id="map-img" src="https://via.placeholder.com/150" class="card-img-top" alt="">
-            <div class="card-body">
-              <p class="card-text">We'll put something here</p>
+           <!-- start #weather-card -->
+            <div class="card">
+              <div class="card-body">
+                <!-- .capital-city -->
+                <h5 class="card-title">Weather in <span class="capital-city"></span></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Learnt he weather in <span class="capital-city"></span> !</h6>
+                <div id="weather-card">
+
+                </div>
+              </div>
             </div>
-          </div>
+            <!-- end weather card -->
           <!-- end map card -->
         </div>
         <!-- end map col -->
@@ -105,21 +114,15 @@
       
       <!-- end #holiday-card -->
       <div class="card">
-        <div id="holiday-card" class="card-body">
+        <div class="card-body">
           <!-- .capital-city -->
           <h5 class="card-title">Holidays in <span class="country-name"></span></h5>
+          <div id="holiday-card">
+
+          </div>
         </div>
       </div>           
-      <!-- start #weather-card -->
-      <div class="card">
-        <div id="weather-card" class="card-body">
-          <!-- .capital-city -->
-          <h5 class="card-title">Weather in <span class="capital-city"></span></h5>
-          <h6 class="card-subtitle mb-2 text-muted">Learnt he weather in <span class="capital-city"></span> !</h6>
-          
-        </div>
-      </div>
-      <!-- end weather card -->
+     
     </aside>
     <!-- end right aside -->
   </div>

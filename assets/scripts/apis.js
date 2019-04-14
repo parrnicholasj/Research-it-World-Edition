@@ -4,7 +4,7 @@ var promiseHandler = promise => promise
   .then(res => [null, res])
   .catch(err => [err, null])//promise stuff
 
-async function callCountry(countryName, info, cb)
+async function callCountry(countryName, cb)
 {
 
   var queryURL = "https://restcountries.eu/rest/v2/name/" + countryName//query url update as needed
@@ -18,7 +18,7 @@ async function callCountry(countryName, info, cb)
   }
 
   console.log(response);
-  cb(response[0][info]);
+  cb(response[0]);
 }
 
 // // example search for flag

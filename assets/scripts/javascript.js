@@ -186,14 +186,18 @@ $(document).ready(function(){
       // call NYTimes API
 
       callNYT(countryInput, function(nytimesResponse){
-        console.log("this is " + nytimesResponse);
+        console.log(nytimesResponse);
 
         for (var i =0; i < nytimesResponse.length; i++){
           var $divCard = $("<div>").addClass("card")
 
           var $divCardBody = $("<div>").addClass("card-body");
 
-          var $h5 = $("<h5>").addClass("card-title").text(nytimesResponse[i].title)
+          var $h5 = $("<h5>").addClass("card-title");
+          
+          var $atitle = $("<a>").attr("href", nytimesResponse[i].url).text(nytimesResponse[i].title);
+
+          $h5.append($atitle);  
 
           var $h6 = $("<h6>").addClass("card-subtitle mb-2 text-muted").text(nytimesResponse[i].author);
 

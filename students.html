@@ -13,7 +13,7 @@
 <!-- start container for entire page -->
 <div class="container">
   <!-- start row div with all 3 columns -->
-  <div class="row hidden">
+  <div class="row">
     <!-- left aside -->
     <aside class="col-12 col-md-2">
       <!-- start student input card -->
@@ -33,7 +33,7 @@
               <label for="country-input">Country Name</label>
               <input type="text" class="form-control" id="country-input" placeholder="Country Name...">
             </div>
-            <button id="tempSubmit" type="submit" class="btn btn-primary">Submit</button>
+            <button id="studentSearchFormSubmit" type="submit" class="btn btn-primary">Submit</button>
           </form>
           <!-- end form -->
         </div>
@@ -44,11 +44,11 @@
 
     <!-- start main content area -->
     <main class="col-12 col-md-7">
-      <!-- start jumbotron container the country name -->
-      <div class="jumbotron jumbotron-fluid">
+      <!-- start #countryFlagJumbo jumbotron container the country name -->
+      <div id="countryFlagJumbo" class="jumbotron jumbotron-fluid">
         <div class="container">
           <!-- .country-name writing from JS -->
-          <h1 class="display-4 country-name">Fluid jumbotron</h1>
+          <h1 class="display-4 country-name"></h1>
         </div>
       </div>
       <!-- end jumbotron containing country name -->
@@ -60,8 +60,7 @@
           <!-- start #country-info-card-->
           <div class="card">
             <div id="country-info-card"class="card-body">
-              <h5 class="card-title">Info</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Basic Fact About <span class="country-name"></span></h6>
+              <h5 class="card-title">Info about <span class="country-name"></span></h5>
                 <!-- information to be printed here from the JS -->
             </div>
           </div>
@@ -103,14 +102,25 @@
     <!-- start right aside -->
     <aside class="col-12 col-md-3">
       <!-- start #holiday-card -->
+      
+      
+      <!-- end #holiday-card -->
       <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Holidays</h5>
-          <h6 class="card-subtitle mb-2 text-muted">A year's worth of holidays!</h6>
+        <div id="holiday-card" class="card-body">
+          <!-- .capital-city -->
+          <h5 class="card-title">Holidays in <span class="country-name"></span></h5>
+        </div>
+      </div>           
+      <!-- start #weather-card -->
+      <div class="card">
+        <div id="weather-card" class="card-body">
+          <!-- .capital-city -->
+          <h5 class="card-title">Weather in <span class="capital-city"></span></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Learnt he weather in <span class="capital-city"></span> !</h6>
           
         </div>
       </div>
-      <!-- end #holiday-card -->
+      <!-- end weather card -->
     </aside>
     <!-- end right aside -->
   </div>
@@ -139,6 +149,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <script src="assets/scripts/countrycodes.js"></script>
   <script src="assets/scripts/javascript.js"></script>
   <script src="assets/scripts/searchOnClick.js"></script>
   <script src="assets/scripts/apis.js"></script>

@@ -177,6 +177,22 @@ $(document).ready(function () {
 
 
 
+        var $liCapital = $("<li>").text(`Capital City: ${infoResponse.capital}`);
+        var $liNativeName = $("<li>").text(`Native Name: ${infoResponse.nativeName}`);
+
+        var languages = infoResponse.languages.map(function(language) {
+          return language.name;
+        }).join(", ");
+
+        var $liLanguages = $("<li>").text("Language(s): " + languages);
+        var $liSubregion = $("<li>").text(`Location: ${infoResponse.subregion}`);
+        var $liCurrency = $("<li>").text("Currency: " + infoResponse.currencies[0].name + " , " + infoResponse.currencies[0].symbol);
+       
+
+        $ulInfo.append($liNativeName, $liCapital, $liLanguages, $liSubregion, $liCurrency);
+        
+        $("#country-info-card").append($ulInfo);
+
       countryData.name = infoResponse.name;
       countryData.nativeName = infoResponse.nativeName;
       countryData.subregion = infoResponse.subregion;
@@ -185,6 +201,7 @@ $(document).ready(function () {
       countryData.languages = infoResponse.languages;
 
       database.ref("countryData").push(countryData);
+
 
 
 
@@ -279,12 +296,16 @@ $(document).ready(function () {
 
     console.log(toggleListAttr);
 
-    if (toggleListAttr === "hidden") {
-      ulChild.style.display = "block";
-      toggleListAttr = $(this).attr("data-state", "show");
-    } else {
-      ulChild.style.display = "none";
-    }
 
-  })
-});
+      if (toggleListAttr === "hidden"){
+        ulChild.style.display = "block";
+        toggleListAttr = $(this).attr("data-state", "show");
+      }
+      else {
+        ulChild.style.display = "none";
+        toggleListAttr = $(this).attr("data-state", "hide")
+      }
+      
+    })
+  });
+

@@ -18,16 +18,31 @@
     <!-- left column start-->
     <aside class="col-12 col-md-4">
       <!-- start form -->
-      <form>
-          <!-- #student-name-add input field -->
-          <div class="form-group">
-            <label for="student-name-add">Student Name</label>
-            <input type="text" class="form-control" id="student-name-add" placeholder="Jane Doe">
-          </div>
-          <!-- #student-name-submit -->
-          <button id="student-name-submit" type="submit" class="btn btn-primary">Submit</button>
-        </form>
+      <form id="student-add-form">
+        <!-- #student-name-add input field -->
+        <div class="form-group">
+          <label for="student-name-add">Student Name</label>
+          <input type="text" class="form-control" id="student-name-add" placeholder="Jane Doe">
+        </div>
+        <!-- #student-name-submit -->
+        <button id="student-name-submit" type="submit" class="btn btn-primary">Submit</button>
+      </form>
         <!-- end form -->
+
+      <!-- temp form -->
+      <form id="studentSearchForm">
+        <div class="form-group">
+          <label for="studentPicker">Student Select</label>
+          <select class="form-control" id="studentPicker">
+            <!-- options will be printed here from the database -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="country-input">Country Name</label>
+          <input type="text" class="form-control" id="country-input" placeholder="save stuff">
+        </div>
+        <button id="tempSubmit" type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </aside>
     <!-- left column end -->
 
@@ -61,6 +76,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-<script src="assets/scripts/javascript.js"></script>
+<script src="assets/scripts/kit.js"></script>
 </body>
 </html>

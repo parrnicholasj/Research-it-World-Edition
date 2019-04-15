@@ -160,7 +160,7 @@ $(document).ready(function(){
           var countryCurrencySymbol = dbCountry.currency[0].symbol;
           var holidays = Object.values(dbCountry.holiday);
           console.log(holidays);
-          console.log(countryCurrencySymbol);
+          
 
 
           // print the info to the page

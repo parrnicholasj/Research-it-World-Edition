@@ -59,6 +59,7 @@ $(document).ready(function(){
     // global variables
     var database = firebase.database();
     var capital;
+    
 
     $("#studentSearchForm").on("submit", function(event){
 
@@ -113,6 +114,7 @@ $(document).ready(function(){
       event.preventDefault();
       // creating variables for the text box and selector
 
+      
       $("#country-info-card").empty();
       $("#news-card").empty();
       $("#holiday-card").empty();
@@ -121,20 +123,143 @@ $(document).ready(function(){
       var countryInput = $("#country-input").val().trim();
       var studentPicker = $("#studentPicker").val();
       var countryData = {};
+      function jelly (){
+        micron.getEle("#country-input").interaction("pop").duration(".5").timing("ease-out")
+      }
+      if (countryInput === ""){
+        jelly();
+        
+      }
+      $("#country-info-card").empty();
+      $("#news-card").empty();
+      $("#holiday-card").empty();
+      $("#weather-card").empty();
 
       console.log(studentPicker);
-
-      database.ref("countryData").once("value", function (snapshot){
-
-        console.log(snapshot);
-        if (snapshot.child("name") === countryInput){
-          console.log("country previously searched")
-        };
-      });
+      
       // update user's firebase entry to save past searches
       database.ref(`${studentPicker}/searches`).push(countryInput)
 
-      // calling the country info API
+      database.ref("countryData").once("value", function (snapshot){
+
+        console.log(snapshot.val());
+        if (snapshot.child(countryInput.toLowerCase()).exists()){
+          console.log("country previously searched")
+          // use value of snapshot.val()[countryInput.toLowerCase()]
+          var name = countryInput.toLowerCase();
+          console.log(name);
+          var dbCountry = snapshot.val()[name]
+          var countryName = dbCountry.name;
+          console.log(countryName);
+          var countryCapital = dbCountry.capital
+          console.log(countryCapital);
+          var countryLanguages = Object.values(dbCountry.languages);
+          var countryNativeName = dbCountry.nativeName;
+          var countrySubRegion = dbCountry.subregion;
+          var countryCurrencyName = dbCountry.currency[0].name;
+          var countryCurrencySymbol = dbCountry.currency[0].symbol;
+          var holidays = Object.values(dbCountry.holiday);
+          console.log(holidays);
+
+
+          // print the info to the page
+
+        var $ulInfo = $("<ul>")
+
+        var $liCapital = $("<li>").text(`Capital City: ${countryCapital}`);
+        var $liNativeName = $("<li>").text(`Native Name: ${countryNativeName}`);
+
+        var languages = countryLanguages.map(function(language) {
+          return language.name;
+        }).join(", ");
+
+        var $liLanguages = $("<li>").text("Language(s): " + languages);
+        var $liSubregion = $("<li>").text(`Location: ${countrySubRegion}`);
+        var $liCurrency = $("<li>").text("Currency: " + countryCurrencyName + " , " + countryCurrencySymbol);
+       
+
+        $ulInfo.append($liNativeName, $liCapital, $liLanguages, $liSubregion, $liCurrency);
+        
+        $("#country-info-card").append($ulInfo);
+
+        $(".country-name").text(countryInput);
+
+          // print the holidays to the page
+
+          for (var i=0; i < holidays.length; i++){
+
+            var $div1 = $("<div>");
+            var $h2Holiday = $("<h6>").addClass("holidayListToggle").attr("data-state", "hidden").text(holidays[i].name);
+            
+            $div1.append($h2Holiday);
+  
+            var $ul = $("<ul>").addClass("toggleInfo").css("display", "none");
+            var $liDate = $("<li>").text(holidays[i].date.iso)
+            var $liDescr = $("<li>").text(holidays[i].description);
+  
+            $ul.append($liDate, $liDescr);
+  
+            $div1.append($ul);
+  
+  
+            $("#holiday-card").append($div1);
+  
+          };
+
+
+
+          // calling the weather api
+          callWeather(countryCapital, function(weatherResponse) {
+            console.log(weatherResponse);
+  
+            $(".capital-city").text(dbCountry.capital);
+            countryData.capitalCity = dbCountry.capital;
+            var $ul = $("<ul>")
+  
+            var $liTemp = $("<li>").text(weatherResponse.temp);
+            var $liWeather = $("<li>").text(weatherResponse.weather);
+            var $liWeatherDescr = $("<li>").text(weatherResponse.weatherDescr);
+  
+            $ul.append($liTemp, $liWeather, $liWeatherDescr);
+  
+            $("#weather-card").append($ul);
+  
+          });
+
+          // call NYTimes API
+
+      callNYT(countryName, function(nytimesResponse){
+        console.log(nytimesResponse);
+
+        for (var i =0; i < nytimesResponse.length; i++){
+          var $divCard = $("<div>").addClass("card")
+
+          var $divCardBody = $("<div>").addClass("card-body");
+
+          var $h5 = $("<h5>").addClass("card-title");
+          
+          var $atitle = $("<a>").attr("href", nytimesResponse[i].url).text(nytimesResponse[i].title);
+
+          $h5.append($atitle);  
+
+          var $h6 = $("<h6>").addClass("card-subtitle mb-2 text-muted").text(nytimesResponse[i].author);
+
+          var $p = $("<p>").addClass("card-text").text(nytimesResponse[i].snippet);
+
+          $divCardBody.append($h5, $h6, $p);
+
+
+          $divCard.append($divCardBody);
+
+          $("#news-card").append($divCard);
+
+        }
+      
+      });
+        }
+        else {
+          // move forward with creating new entry in "countryData" in firebase
+          // calling the country info API
 
       callCountry(countryInput, function (infoResponse){
         
@@ -184,13 +309,19 @@ $(document).ready(function(){
         
 
         countryData.name = infoResponse.name;
+        countryData.capital = infoResponse.capital;
         countryData.nativeName = infoResponse.nativeName;
         countryData.subregion = infoResponse.subregion;
         countryData.currency = infoResponse.currencies;
         countryData.flag = infoResponse.flag;
         countryData.languages = infoResponse.languages;
+        
 
-        database.ref("countryData").push(countryData);
+
+        database.ref("countryData/"+countryData.name.toLowerCase()).set(countryData);
+
+
+
 
 
         
@@ -237,6 +368,9 @@ $(document).ready(function(){
       callHolidays(countryCode, 2019, function(response) {
         console.log(response);
         // use response to print out holiday information
+        countryData.holiday = response;
+        database.ref("countryData/"+countryData.name.toLowerCase()).set(countryData);
+
 
         for (var i=0; i < response.length; i++){
 
@@ -258,12 +392,16 @@ $(document).ready(function(){
 
         };
         
+        $("#country-input").val("");
 
         
 
         
 
       });
+        }
+      });
+      
     });
 
     $(document).on("click", ".holidayListToggle", function(){

@@ -160,7 +160,13 @@ $(document).ready(function(){
           var countryCurrencySymbol = dbCountry.currency[0].symbol;
           var holidays = Object.values(dbCountry.holiday);
           console.log(holidays);
-          
+          console.log(countryCurrencySymbol);
+          var flag = dbCountry.flag;
+          console.log(flag);
+
+          // flag to jumbotron
+
+          document.getElementById("countryFlagJumbo").style.backgroundImage = `url(${flag})`;
 
 
           // print the info to the page
@@ -195,10 +201,17 @@ $(document).ready(function(){
             $div1.append($h2Holiday);
   
             var $ul = $("<ul>").addClass("toggleInfo").css("display", "none");
+
+            if (holidays[i].date.iso != null){
             var $liDate = $("<li>").text(holidays[i].date.iso)
+            $ul.append($liDate);
+            }
+
+            if (holidays[i].description != null){
             var $liDescr = $("<li>").text(holidays[i].description);
+            $ul.append($liDescr);
+            }
   
-            $ul.append($liDate, $liDescr);
   
             $div1.append($ul);
   
@@ -285,6 +298,10 @@ $(document).ready(function(){
         });
 
         // appending to page info about country card
+        var urlFlag = infoResponse.flag;
+        console.log(urlFlag);
+
+        document.getElementById("countryFlagJumbo").style.backgroundImage = `url(${urlFlag})`;
         var $ulInfo = $("<ul>")
 
         var $liCapital = $("<li>").text(`Capital City: ${infoResponse.capital}`);

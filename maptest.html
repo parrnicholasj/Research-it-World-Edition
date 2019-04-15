@@ -1,146 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-<link rel="stylesheet" href="assets/styles/style.css">
-<title>Country Search</title>
-</head>
-<body>
-<!-- start container for entire page -->
-<div class="container">
-  <!-- start row div with all 3 columns -->
-  <div class="row">
-    <!-- left aside -->
-    <aside class="col-12 col-md-2">
-      <!-- start student input card -->
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Search Area</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Select your name, then search for a country!</h6>
-          <!-- start form -->
-          <form id="studentSearchForm">
-            <div class="form-group">
-              <label for="studentPicker">Student Select</label>
-              <select class="form-control" id="studentPicker">
-                <!-- options will be printed here from the database -->
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="country-input">Country Name</label>
-              <input type="text" class="form-control" id="country-input" placeholder="Country Name...">
-            </div>
-            <button id="tempSubmit" type="submit" class="btn btn-primary">Submit</button>
-          </form>
-          <!-- end form -->
-        </div>
-      </div>
-      <!-- end student input card -->
-    </aside>
-    <!-- end left aside -->
+ <!DOCTYPE html>
+ <html lang="en">
 
-    <!-- start main content area -->
-    <main class="col-12 col-md-7">
-      <!-- start jumbotron container the country name -->
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <!-- .country-name writing from JS -->
-          <h1 class="display-4 country-name">Fluid jumbotron</h1>
-        </div>
-      </div>
-      <!-- end jumbotron containing country name -->
 
-      <!-- start row containing info and map information -->
-      <div class="row">
-        <!-- start info col -->
-        <div class="col-6 col-md-7">
-          <!-- start #country-info-card-->
-          <div class="card">
-            <div id="country-info-card"class="card-body">
-              <h5 class="card-title">Info</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Basic Fact About <span class="country-name"></span></h6>
-                <!-- information to be printed here from the JS -->
-            </div>
-          </div>
-          <!-- end info card -->
-        </div>
-        <!-- end info col -->
-
-        <!-- start map col -->
-        <div class="col-6 col-md-5">
-          <!-- start map card img id: #map-img-->
-          <div class="card">
-            <img id="map-img" src="https://via.placeholder.com/150" class="card-img-top" alt="">
-            <div class="card-body">
-              <p class="card-text">We'll put something here</p>
-            </div>
-          </div>
-          <!-- end map card -->
-        </div>
-        <!-- end map col -->
-      </div>
-      <!-- end row containing info and map information -->
-
-      <!-- row containing news card -->
-      <div class="row">
-          <!-- start #news-card -->
-          <div class="card">
-            <div id="news-card" class="card-body">
-              <h5 class="card-title">Current News</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              
-            </div>
-          </div>
-          <!-- end #news-card -->
-      </div>
-      <!-- end row containing news card -->
-    </main>
-    <!-- end main content area -->
-
-    <!-- start right aside -->
-    <aside class="col-12 col-md-3">
-      <!-- start #holiday-card -->
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Holidays</h5>
-          <h6 class="card-subtitle mb-2 text-muted">A year's worth of holidays!</h6>
-          
-        </div>
-      </div>
-      <!-- end #holiday-card -->
-    </aside>
-    <!-- end right aside -->
-  </div>
-  <!-- end row div with all 3 columns -->
-</div>
-<!-- end container entire page -->
-
- <!-- Modal -->
-            <!-- <div class="modal fade" id="emptyInputs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hey!</h5>
-                  </div>
-                  <div class="modal-body">
-                    You didn't fill in at least one of the boxes. Please fill in both boxes before continuing.
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Okay
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="assets/scripts/javascript.js"></script>
-  <script src="assets/scripts/searchOnClick.js"></script>
-  <script src="assets/scripts/apis.js"></script>
-</body>
-</html>
+  <head>
+    <meta http-equiv="content-language" content="en" />
+    <script type="module" src="../packages/wired-card/lib/wired-card.js"></script>
+  
+    <style>
+      body {
+        margin: 0;
+        padding: 10px;
+        font-family: sans-serif;
+        line-height: 1.5;
+      }
+      wired-card {
+        max-width: 100%;
+      }
+      .card-grid {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="card-grid">
+      <wired-card>
+        <h4>Card 1</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </wired-card>
+      <wired-card elevation="3">
+        <h4>Card 2</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </wired-card>
+      <wired-card>
+        <h4>Card 3</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </wired-card>
+    </div>
+  
+  </body>
+  
+  </html>

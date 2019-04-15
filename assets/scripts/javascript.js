@@ -64,7 +64,14 @@ $(document).ready(function () {
 
     event.preventDefault();
 
+var flagURL = "";
 
+callCountry(countryInput, function(infoResponse){
+  console.log(countryInput + "1234567890")
+  flagURL = infoResponse.flag
+  console.log(flagURL + "!!!!!")
+  document.getElementById("countryFlagJumbo").style.backgroundImage = "url(" + flagURL + ")"
+})
 
 
     // getting the key from the selected item to a place where the information can be retrieved

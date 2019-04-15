@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles/style.css">
 <title>Country Search</title>
 </head>
@@ -56,9 +57,9 @@
       <!-- start row containing info and map information -->
       <div class="row">
         <!-- start info col -->
-        <div class="col-6 col-md-7">
+        <div class="col-12 col-md-7">
           <!-- start #country-info-card-->
-          <div class="card">
+          <div class="card mb-2" id="country-header">
             <div class="card-body">
               <h5 class="card-title">Info about <span class="country-name"></span></h5>
               <div id="country-info-card">
@@ -72,14 +73,14 @@
         <!-- end info col -->
 
         <!-- start map col -->
-        <div class="col-6 col-md-5">
+        <div class="col-12 col-md-5">
           <!-- start map card img id: #map-img-->
            <!-- start #weather-card -->
             <div class="card">
               <div class="card-body">
                 <!-- .capital-city -->
-                <h5 class="card-title">Weather in <span class="capital-city"></span></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Learnt he weather in <span class="capital-city"></span> !</h6>
+                <h5 class="card-title">Weather</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Weather in <span class="capital-city"></span></h6>
                 <div id="weather-card">
 
                 </div>
@@ -152,6 +153,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <!-- <script src="https://unpkg.com/wired-elements@latest/dist/wired-elements.bundled.min.js"></script> -->
   <script src="assets/scripts/countrycodes.js"></script>
   <script src="assets/scripts/javascript.js"></script>
   <script src="assets/scripts/searchOnClick.js"></script>

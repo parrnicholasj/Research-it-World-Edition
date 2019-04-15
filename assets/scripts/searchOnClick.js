@@ -24,7 +24,14 @@ $("#search").on("click", function(event){
       }, false);
     })(); 
   
+    var flagURL = "";
 
+    callCountry(countryInput, function(infoResponse){
+      console.log(countryInput + "1234567890")
+      flagURL = infoResponse.flag
+      console.log(flagURL + "!!!!!")
+      document.getElementById("countryFlagJumbo").style.backgroundImage = "url(" + flagURL + ")"
+    });
   // Country info
   $("#country-name").html(countryName);
   $(".capital").html("The Capital...");

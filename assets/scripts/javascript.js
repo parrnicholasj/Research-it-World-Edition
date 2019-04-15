@@ -111,6 +111,21 @@ $(document).ready(function () {
   $("#studentSearchForm").on("submit", function (event) {
 
     event.preventDefault();
+    
+    //hide everything while gif plays for a few seconds
+    document.getElementById("contain").style.display = "none";
+    setTimeout(unHide, 5000);
+    var $gif = $("<img>");
+    $gif.attr("src", "assets/images/Rotating_globe.gif");
+    $(".gifHolder").append($gif);
+
+    function unHide(){
+
+      $(".gifHolder").empty();
+      document.getElementById("contain").style.display = "block";
+
+    }
+
     // creating variables for the text box and selector
 
     $("#country-info-card").empty();

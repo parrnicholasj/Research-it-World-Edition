@@ -161,6 +161,12 @@ $(document).ready(function(){
           var holidays = Object.values(dbCountry.holiday);
           console.log(holidays);
           console.log(countryCurrencySymbol);
+          var flag = dbCountry.flag;
+          console.log(flag);
+
+          // flag to jumbotron
+
+          document.getElementById("countryFlagJumbo").style.backgroundImage = `url(${flag})`;
 
 
           // print the info to the page
@@ -292,6 +298,10 @@ $(document).ready(function(){
         });
 
         // appending to page info about country card
+        var urlFlag = infoResponse.flag;
+        console.log(urlFlag);
+
+        document.getElementById("countryFlagJumbo").style.backgroundImage = `url(${urlFlag})`;
         var $ulInfo = $("<ul>")
 
         var $liCapital = $("<li>").text(`Capital City: ${infoResponse.capital}`);

@@ -143,12 +143,12 @@ $(document).ready(function(){
         // calling the weather API
         callWeather(infoResponse.capital, function(weatherResponse) {
           console.log(weatherResponse);
-
+          var tempF = Math.round((weatherResponse.temp - 273.15) * 1.80 + 32)
           $(".capital-city").text(infoResponse.capital);
           countryData.capitalCity = infoResponse.capital;
           var $ul = $("<ul>")
 
-          var $liTemp = $("<li>").text(weatherResponse.temp);
+          var $liTemp = $("<li>").text(tempF + "ºF");
           var $liWeather = $("<li>").text(weatherResponse.weather);
           var $liWeatherDescr = $("<li>").text(weatherResponse.weatherDescr);
 

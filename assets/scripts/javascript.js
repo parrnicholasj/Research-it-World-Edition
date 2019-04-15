@@ -235,7 +235,7 @@ $(document).ready(function(){
         for (var i=0; i < response.length; i++){
 
           var $div1 = $("<div>");
-          var $h2Holiday = $("<h6>").addClass("holidayListToggle").attr("data-state", "hidden").text(response[i].name);
+          var $h2Holiday = $("<h6>").addClass("holidayListToggle").attr("data-state", "hidden").attr("aria-expanded", "false").text(response[i].name);
           
           $div1.append($h2Holiday);
 
@@ -274,10 +274,11 @@ $(document).ready(function(){
 
       if (toggleListAttr === "hidden"){
         ulChild.style.display = "block";
-        toggleListAttr = $(this).attr("data-state", "show");
+        toggleListAttr = $(this).attr("data-state", "show").attr("aria-expanded", "true");
       }
       else {
         ulChild.style.display = "none";
+        toggleListAttr = $(this).attr("data-state", "hidden").attr("aria-expanded", "false");
       }
       
     })

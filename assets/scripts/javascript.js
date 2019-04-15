@@ -176,23 +176,13 @@ $(document).ready(function () {
       // appending to page info about country card
       var $ulInfo = $("<ul>")
 
-      var $liCapital = $("<li>").text(`Capital City: ${infoResponse.capital}`);
-      var $liNativeName = $("<li>").text(`Native Name: ${infoResponse.nativeName}`);
-      var $liSubregion = $("<li>").text(`Location: ${infoResponse.subregion}`);
-      var $liCurrency = $("<li>").text("Currency: " + infoResponse.currencies[0].name + " , " + infoResponse.currencies[0].symbol);
-
-
-      $ulInfo.append($liNativeName, $liCapital, $liSubregion, $liCurrency);
-
-      $("#country-info-card").append($ulInfo);
-
       $(".country-name").text(countryInput);
 
       // changing the junbotron background to the country flag image
 
 
 
-        var $liCapital = $("<li>").text(`Capital City: ${infoResponse.capital}`);
+        var $liCapital = $("<li>").text(`Capitol City: ${infoResponse.capital}`);
         var $liNativeName = $("<li>").text(`Native Name: ${infoResponse.nativeName}`);
 
         var languages = infoResponse.languages.map(function(language) {

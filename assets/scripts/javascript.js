@@ -195,10 +195,17 @@ $(document).ready(function(){
             $div1.append($h2Holiday);
   
             var $ul = $("<ul>").addClass("toggleInfo").css("display", "none");
+
+            if (holidays[i].date.iso != null){
             var $liDate = $("<li>").text(holidays[i].date.iso)
+            $ul.append($liDate);
+            }
+
+            if (holidays[i].description != null){
             var $liDescr = $("<li>").text(holidays[i].description);
+            $ul.append($liDescr);
+            }
   
-            $ul.append($liDate, $liDescr);
   
             $div1.append($ul);
   

@@ -163,11 +163,17 @@ $(document).ready(function(){
 
         var $liCapital = $("<li>").text(`Capital City: ${infoResponse.capital}`);
         var $liNativeName = $("<li>").text(`Native Name: ${infoResponse.nativeName}`);
+
+        var languages = infoResponse.languages.map(function(language) {
+          return language.name;
+        }).join(", ");
+
+        var $liLanguages = $("<li>").text("Language(s): " + languages);
         var $liSubregion = $("<li>").text(`Location: ${infoResponse.subregion}`);
         var $liCurrency = $("<li>").text("Currency: " + infoResponse.currencies[0].name + " , " + infoResponse.currencies[0].symbol);
        
 
-        $ulInfo.append($liNativeName, $liCapital, $liSubregion, $liCurrency);
+        $ulInfo.append($liNativeName, $liCapital, $liLanguages, $liSubregion, $liCurrency);
         
         $("#country-info-card").append($ulInfo);
 
@@ -278,6 +284,7 @@ $(document).ready(function(){
       }
       else {
         ulChild.style.display = "none";
+        toggleListAttr = $(this).attr("data-state", "hide")
       }
       
     })

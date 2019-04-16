@@ -1,0 +1,34 @@
+body{
+  background-color: #C17C74;
+  font-family: 'Playfair Display SC', serif;
+
+}
+
+.card, .card-body, .text-muted {
+  background-color: #A7BED3;
+  color: #2A3D45!important;
+}
+.header{
+  background: lightgray
+}
+
+#country-info-card, #country-header{
+  background-image: url("../images/chalkboard-green.jpg");
+  font-family: 'Gloria Hallelujah', cursive;
+  color: white;
+}
+
+.card{
+  box-shadow: 3px 3px;
+}
+
+a {
+  color: #2A3D45;
+}
+
+a:hover {
+  color: #583935;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gloria Hallelujah', cursive;
+}

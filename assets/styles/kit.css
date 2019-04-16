@@ -1,9 +1,17 @@
 body{
-  
-  background-color: #583935;
+  background-image: url("../images/red-background-book.jpg");
+  background-size: cover;
+  /* background-color: #583935; */
   font-family: 'Playfair Display SC', serif;
-
+  background-blend-mode: luminosity;
+  background-color: blanchedalmond;
+  background-position: center;
 }
+.table .thead-dark th {
+  color: #DDC9B4;
+  background-color: #093526;
+  border-color: #093526;
+  }
 
 .card{
   box-shadow: 0px 0px 10px 0px grey;
@@ -25,12 +33,20 @@ body{
     border-color: #DDC9B4;
     } 
 
-    .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
       color: #DDC9B4;
       background-color: #093526;
       border-color: #093526;
+    }
+#countries-of-the-world {
+  background-image: url("../images/chalkboard.jpg");
+  background-position: cover;
+  color: #DDC9B4;
 }
-
+  #student-table-teacher{
+    background-color: #DDC9B4;
+    color: #093526;
+    }
 #news-card {
   font-family: 'Raleway', sans-serif;
 }

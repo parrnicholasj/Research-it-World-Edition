@@ -316,7 +316,6 @@ $(document).ready(function () {
           var urlFlag = infoResponse.flag;
           console.log(urlFlag);
 
-          document.getElementById("countryFlagJumbo").style.backgroundImage = `url(${urlFlag})`;
           var $ulInfo = $("<ul>")
 
           var $liCapital = $("<li>").text(`Capital City: ${infoResponse.capital}`);

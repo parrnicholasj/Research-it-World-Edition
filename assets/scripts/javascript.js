@@ -449,7 +449,7 @@ $(document).ready(function () {
 
     console.log(toggleListAttr);
 
-    if (toggleListAttr === "hidden") {
+    if (toggleListAttr === "hide") {
       ulChild.style.display = "block";
       toggleListAttr = $(this).attr("data-state", "show");
     } else {

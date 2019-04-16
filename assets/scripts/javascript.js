@@ -211,8 +211,8 @@ $(document).ready(function () {
 
         for (var i = 0; i < holidays.length; i++) {
 
-          var $div1 = $("<div>");
-          var $h2Holiday = $("<h6>").addClass("holidayListToggle").attr("data-state", "hidden").text(holidays[i].name);
+          var $div1 = $("<ul>");
+          var $h2Holiday = $("<li>").addClass("holidayListToggle").attr("data-state", "hidden").attr("aria-expanded", "false").text(holidays[i].name);
 
           $div1.append($h2Holiday);
 
@@ -407,8 +407,8 @@ $(document).ready(function () {
 
           for (var i = 0; i < response.length; i++) {
 
-            var $div1 = $("<div>");
-            var $h2Holiday = $("<h6>").addClass("holidayListToggle").attr("data-state", "hidden").text(response[i].name);
+            var $div1 = $("<ul>");
+            var $h2Holiday = $("<li>").addClass("holidayListToggle").attr("data-state", "hidden").attr("aria-expanded", "false").text(response[i].name);
 
             $div1.append($h2Holiday);
 
@@ -451,10 +451,11 @@ $(document).ready(function () {
 
     if (toggleListAttr === "hide") {
       ulChild.style.display = "block";
-      toggleListAttr = $(this).attr("data-state", "show");
+      toggleListAttr = $(this).attr("data-state", "show").attr("aria-expanded", "true");
     } else {
       ulChild.style.display = "none";
-      toggleListAttr = $(this).attr("data-state", "hide")
+      toggleListAttr = $(this).attr("data-state", "hide").attr("aria-expanded", "false");
+
     }
 
   })

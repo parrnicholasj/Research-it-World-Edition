@@ -1,0 +1,62 @@
+body{
+  
+  background-color: #583935;
+  font-family: 'Playfair Display SC', serif;
+
+}
+
+.card{
+  box-shadow: 0px 0px 10px 0px grey;
+}
+
+.card, .card-body, .text-muted {
+  background-color: #DDC9B4;
+  color: #093526!important;
+}
+.btn-primary {
+  color: #DDC9B4;
+  background-color: #093526;
+  border-color: #093526;
+  }
+
+.btn-primary:hover {
+    color: #093526;
+    background-color: #DDC9B4;
+    border-color: #DDC9B4;
+    } 
+
+    .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+      color: #DDC9B4;
+      background-color: #093526;
+      border-color: #093526;
+}
+
+#news-card {
+  font-family: 'Raleway', sans-serif;
+}
+
+.holidayListToggle {
+  list-style-type: none;
+  padding: 0;
+}
+
+.holidayListToggle:hover {
+  background-color: #BCAC9B;
+  list-style-type: none;
+}
+
+.holidayListToggle:focus {
+  background-color: #BCAC9B;
+  list-style-type: none;
+}
+
+a {
+  color: #2A3D45;
+}
+
+a:hover {
+  color: #583935;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gloria Hallelujah', cursive;
+}

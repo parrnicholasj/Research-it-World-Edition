@@ -1,25 +1,37 @@
 body{
-  background-color: #C17C74;
+  
+  background-color: #583935;
   font-family: 'Playfair Display SC', serif;
 
 }
 
-.card, .card-body, .text-muted {
-  background-color: #A7BED3;
-  color: #2A3D45!important;
-}
-.header{
-  background: lightgray
-}
-
-#country-info-card, #country-header{
-  background-image: url("../images/chalkboard-green.jpg");
-  font-family: 'Gloria Hallelujah', cursive;
-  color: white;
-}
-
 .card{
-  box-shadow: 3px 3px;
+  box-shadow: 0px 0px 10px 0px grey;
+}
+
+.card, .card-body, .text-muted {
+  background-color: #DDC9B4;
+  color: #093526!important;
+}
+
+
+#news-card {
+  font-family: 'Raleway', sans-serif;
+}
+
+.holidayListToggle {
+  list-style-type: none;
+  padding: 0;
+}
+
+.holidayListToggle:hover {
+  background-color: #BCAC9B;
+  list-style-type: none;
+}
+
+.holidayListToggle:focus {
+  background-color: #BCAC9B;
+  list-style-type: none;
 }
 
 a {

@@ -1,15 +1,11 @@
-body{
-  background-image: url(../images/cork-board.jpg)
-}
+
 
 .header{
   background: lightgray
 }
 
 #country-info-card, #country-header{
-  background-image: url("../images/chalkboard-green.jpg");
-  font-family: 'Gloria Hallelujah', cursive;
-  color: white;
+  
 }
 
 .card{

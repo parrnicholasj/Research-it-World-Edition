@@ -31,3 +31,5 @@ calendarific.com is being used to get basic info on the holidays of the countrie
 2. Teachers are not currently able to log in, this would be added in the future.
 
 3. Future designs would also include the ability for students to save individual articles and type up notes. 
+
+4. Future version should include a map of the searched country so users can see where it is and what it looks like.

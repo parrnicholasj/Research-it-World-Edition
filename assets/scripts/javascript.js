@@ -182,7 +182,7 @@ $(document).ready(function () {
 
         // flag to jumbotron
 
-        document.getElementById("countryFlagJumbo").style.backgroundImage = `url(${flag})`;
+        $("#flag").html(`<img src=${flag} alt="flag of ${countryName}">`);
 
 
         // print the info to the page

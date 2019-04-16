@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,129 +14,152 @@
 <link rel="stylesheet" href="assets/styles/kit.css">
 <title>Country Search</title>
 </head>
+
 <body>
-<!-- start container for entire page -->
-<div class="container">
-  <!-- start row div with all 3 columns -->
-  <div class="row">
-    <!-- left aside -->
-    <aside class="col-12 col-md-2">
-      <!-- start student input card -->
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Search Area</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Select your name, then search for a country!</h6>
-          <!-- start form -->
-          <form id="studentSearchForm">
-            <div class="form-group">
-              <label for="studentPicker">Student Select</label>
-              <select class="form-control" id="studentPicker">
-                <!-- options will be printed here from the database -->
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="country-input">Country Name</label>
-              <input type="text" class="form-control" id="country-input" placeholder="Country Name...">
-            </div>
-            <button id="studentSearchFormSubmit" type="submit" class="btn btn-primary">Submit</button>
-          </form>
-          <!-- end form -->
-        </div>
-      </div>
-      <!-- end student input card -->
-    </aside>
-    <!-- end left aside -->
+  <!-- start container for entire page -->
+  <div class="gif-holder">
 
-    <!-- start main content area -->
-    <main class="col-12 col-md-7">
-      <!-- start #countryFlagJumbo jumbotron container the country name -->
-      <div id="countryFlagJumbo" class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <!-- .country-name writing from JS -->
-          <h1 class="display-4 country-name"></h1>
-        </div>
-      </div>
-      <!-- end jumbotron containing country name -->
+  </div>
 
-      <!-- start row containing info and map information -->
-      <div class="row">
-        <!-- start info col -->
-        <div class="col-6 col-md-7">
-          <!-- start #country-info-card-->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Info about <span class="country-name"></span></h5>
-              <div id="country-info-card">
-                <!-- information to be printed here from the JS -->
+  <div class="container">
+    <!-- start row div with all 3 columns -->
+    <div class="row mb-2">
+      <!-- left aside -->
+      <aside class="col-12 col-md-2">
+        <!-- start student input card -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Search Area</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Select your name, then search for a country!</h6>
+            <!-- start form -->
+            <form id="studentSearchForm">
+              <div class="form-group">
+                <label for="studentPicker">Student Select</label>
+                <select class="form-control" id="studentPicker">
+                  <!-- options will be printed here from the database -->
+                </select>
               </div>
-                
+              <div class="form-group">
+                <label for="country-input">Country Name</label>
+                <input type="text" class="form-control" id="country-input" placeholder="Country Name...">
+              </div>
+              <button id="studentSearchFormSubmit" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <!-- end form -->
+          </div>
+        </div>
+        <!-- end student input card -->
+      </aside>
+      <!-- end left aside -->
+
+      <!-- start main content area -->
+      <main class="col-12 col-md-7">
+        <!-- Start row for name and flag -->
+      
+
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <h5 class="country-name"></h5>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <span id="flag"></span>
+                  
+                </div>
+              </div>
             </div>
           </div>
-          <!-- end info card -->
-        </div>
-        <!-- end info col -->
+          
 
-        <!-- start map col -->
-        <div class="col-6 col-md-5">
-          <!-- start map card img id: #map-img-->
-           <!-- start #weather-card -->
+        <!-- start #countryFlagJumbo jumbotron container the country name -->
+        <!-- <div id="countryFlagJumbo" class="jumbotron jumbotron-fluid py-5">
+        <div class="container">
+          <!-- .country-name writing from JS -->
+        <!-- <h1 class="display-4 country-name">
+        </div>
+      </div> -->
+        <!-- end jumbotron containing country name -->
+
+        <!-- start row containing info and map information -->
+        <div class="row">
+          <!-- start info col -->
+          <div class="col-6 col-md-7">
+            <!-- start #country-info-card-->
+            <div class="card country-header">
+              <div class="card-body">
+                <h5 class="card-title">Info about <span class="country-name">(country)</span></h5>
+                <div id="country-info-card">
+                  <!-- information to be printed here from the JS -->
+                </div>
+
+              </div>
+            </div>
+            <!-- end info card -->
+          </div>
+          <!-- end info col -->
+
+          <!-- start map col -->
+          <div class="col-6 col-md-5">
+            <!-- start map card img id: #map-img-->
+            <!-- start #weather-card -->
             <div class="card">
               <div class="card-body">
                 <!-- .capital-city -->
-                <h5 class="card-title">Weather in <span class="capital-city"></span></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Learnt he weather in <span class="capital-city"></span> !</h6>
+                <h5 class="card-title">Weather</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Current conditions in <span class="capital-city"></span></h6>
                 <div id="weather-card">
 
                 </div>
               </div>
             </div>
             <!-- end weather card -->
-          <!-- end map card -->
+            <!-- end map card -->
+          </div>
+          <!-- end map col -->
         </div>
-        <!-- end map col -->
-      </div>
-      <!-- end row containing info and map information -->
+        <!-- end row containing info and map information -->
 
-      <!-- row containing news card -->
-      <div class="row">
+        <!-- row containing news card -->
+        <div class="row">
           <!-- start #news-card -->
-          <div class="card">
-            <div id="news-card" class="card-body">
-              
-              
+          <!-- <div class="card"> -->
+          <div id="news-card" class="card-body">
+
+
+          </div>
+          <!-- </div> -->
+          <!-- end #news-card -->
+        </div>
+        <!-- end row containing news card -->
+      </main>
+      <!-- end main content area -->
+
+      <!-- start right aside -->
+      <aside class="col-12 col-md-3">
+        <!-- start #holiday-card -->
+
+
+        <!-- end #holiday-card -->
+        <div class="card">
+          <div class="card-body">
+            <!-- .capital-city -->
+            <h5 class="card-title">Holidays in <span class="country-name"></span></h5>
+            <div id="holiday-card">
+
             </div>
           </div>
-          <!-- end #news-card -->
-      </div>
-      <!-- end row containing news card -->
-    </main>
-    <!-- end main content area -->
-
-    <!-- start right aside -->
-    <aside class="col-12 col-md-3">
-      <!-- start #holiday-card -->
-      
-      
-      <!-- end #holiday-card -->
-      <div class="card">
-        <div class="card-body">
-          <!-- .capital-city -->
-          <h5 class="card-title">Holidays in <span class="country-name"></span></h5>
-          <div id="holiday-card">
-
-          </div>
         </div>
-      </div>           
-     
-    </aside>
-    <!-- end right aside -->
-  </div>
-  <!-- end row div with all 3 columns -->
-</div>
-<!-- end container entire page -->
 
- <!-- Modal -->
-            <!-- <div class="modal fade" id="emptyInputs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      </aside>
+      <!-- end right aside -->
+    </div>
+    <!-- end row div with all 3 columns -->
+  </div>
+  <!-- end container entire page -->
+
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="emptyInputs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -161,4 +186,5 @@
   <script src="assets/scripts/searchOnClick.js"></script>
   <script src="assets/scripts/apis.js"></script>
 </body>
+
 </html>

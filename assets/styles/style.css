@@ -6,12 +6,19 @@ body{
   background: lightgray
 }
 
-#country-info-card, #country-header{
+#country-info-card, .country-header{
   background-image: url("../images/chalkboard-green.jpg");
   font-family: 'Gloria Hallelujah', cursive;
   color: white;
 }
 
-.card{
-  box-shadow: 3px 3px
+
+#countryFlagJumbo{
+  color: white;
+  -webkit-text-stroke: 1px black;
+  background: white
+}
+
+img{
+  width: 100%
 }

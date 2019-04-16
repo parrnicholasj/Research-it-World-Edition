@@ -13,9 +13,13 @@
 </head>
 <body>
 <!-- start container for entire page -->
+<div class="gif-holder">
+  
+</div>
+
 <div class="container">
   <!-- start row div with all 3 columns -->
-  <div class="row">
+  <div class="row mb-2">
     <!-- left aside -->
     <aside class="col-12 col-md-2">
       <!-- start student input card -->
@@ -46,23 +50,39 @@
 
     <!-- start main content area -->
     <main class="col-12 col-md-7">
+      <!-- Start row for name and flag -->
+      <div class="row mb-2">
+        <!-- Name Column -->
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="country-name"></h1>
+            </div>
+          </div>
+        </div>
+        <!-- Flag column -->
+        <div class="col-12 col-md-6">
+          <span id="flag"></span>
+        </div>
+        </div>
+      
       <!-- start #countryFlagJumbo jumbotron container the country name -->
-      <div id="countryFlagJumbo" class="jumbotron jumbotron-fluid">
+      <!-- <div id="countryFlagJumbo" class="jumbotron jumbotron-fluid py-5">
         <div class="container">
           <!-- .country-name writing from JS -->
-          <h1 class="display-4 country-name"></h1>
+          <!-- <h1 class="display-4 country-name">
         </div>
-      </div>
+      </div> -->
       <!-- end jumbotron containing country name -->
-
+    
       <!-- start row containing info and map information -->
       <div class="row">
         <!-- start info col -->
         <div class="col-6 col-md-7">
           <!-- start #country-info-card-->
-          <div class="card">
+          <div class="card country-header">
             <div class="card-body">
-              <h5 class="card-title">Info about <span class="country-name"></span></h5>
+              <h5 class="card-title">Info about <span class="country-name">(country)</span></h5>
               <div id="country-info-card">
                 <!-- information to be printed here from the JS -->
               </div>
@@ -80,8 +100,8 @@
             <div class="card">
               <div class="card-body">
                 <!-- .capital-city -->
-                <h5 class="card-title">Weather in <span class="capital-city"></span></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Learnt he weather in <span class="capital-city"></span> !</h6>
+                <h5 class="card-title">Weather</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Current conditions in <span class="capital-city"></span></h6>
                 <div id="weather-card">
 
                 </div>
@@ -97,12 +117,12 @@
       <!-- row containing news card -->
       <div class="row">
           <!-- start #news-card -->
-          <div class="card">
+          <!-- <div class="card"> -->
             <div id="news-card" class="card-body">
               
               
             </div>
-          </div>
+          <!-- </div> -->
           <!-- end #news-card -->
       </div>
       <!-- end row containing news card -->

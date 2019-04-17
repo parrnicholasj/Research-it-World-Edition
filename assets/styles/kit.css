@@ -50,7 +50,11 @@ body{
 #news-card {
   font-family: 'Raleway', sans-serif;
 }
-
+.country-name {
+  text-align: center;
+  padding-top: 50%;
+  font-size: 3rem;
+}
 .holidayListToggle {
   list-style-type: none;
   padding: 0;

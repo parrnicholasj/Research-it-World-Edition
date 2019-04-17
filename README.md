@@ -1,6 +1,6 @@
 # groupProject1
 ##  Description 
-( insert name here) is designed as a classroom research tool for grades 5-7. Students at this age often start engaging in research projects for the first time, and begin talking about primary and secondary sources for research. The app is meant to be used as a preliminary research tool, to guide students through what kinds of information they might need in a larger research project. 
+Research It: Country Edition is designed as a classroom research tool for grades 5-7. Students at this age often start engaging in research projects for the first time, and begin talking about primary and secondary sources for research. The app is meant to be used as a preliminary research tool, to guide students through what kinds of information they might need in a larger research project. 
 ## Function 
 When you first load the app, it brings you to a page that will direct you to either the student view or the teacher view. 
 
@@ -14,7 +14,7 @@ This is a web based app using HTML/CSS and Javascript. It is using Firebase as a
 Layout is part custom built and partly using Bootstrap libraries. The font is coming from Wired.js, and some of the animations are being provided by micron.js. 
 
 ### Features
-(insert name) is meant to be able to be used in an inclusive classroom environment. To that end, accessability was considered since the beginning. Our app follows WCAG, in order provide a complete experience for students and teachers. 
+Research It is meant to be able to be used in an inclusive classroom environment. To that end, accessability was considered since the beginning. Our app follows WCAG, in order provide a complete experience for students and teachers. 
 
 #### About the APIs
 restcountries.eu gives basic information about most countries and serves as a basis for working with the other APIs.
@@ -24,6 +24,8 @@ openweathermap.org is being used to provide weather in the capital city of the c
 The New York Times API is being used to provide access to articles related to the country being searched
 
 calendarific.com is being used to get basic info on the holidays of the countries being searched.
+
+### 
 
 ## Future Additions
 1. Right now, the databse is not completely built up. It is storing searches and results, and each student's search is being stored, but the teacher is not currently able to look up all previous searches. The database has the information, but it has not been printed to the teacher access page yet.

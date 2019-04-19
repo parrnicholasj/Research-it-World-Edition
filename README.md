@@ -1,4 +1,4 @@
-# groupProject1
+# Research it: World Edition
 ##  Description 
 Research It: Country Edition is designed as a classroom research tool for grades 5-7. Students at this age often start engaging in research projects for the first time, and begin talking about primary and secondary sources for research. The app is meant to be used as a preliminary research tool, to guide students through what kinds of information they might need in a larger research project. 
 ## Function 
